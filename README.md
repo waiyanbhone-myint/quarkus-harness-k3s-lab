@@ -1,67 +1,87 @@
-<<<<<<< HEAD
-# quarkus-harness-k3s-lab
-=======
-<<<<<<< HEAD
-# quarkus-harness-k3s-lab
-=======
-# config-quickstart
+# Quarkus Inventory API
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+A cloud-native RESTful API for managing digital inventory, built with Quarkus and designed for a modern CI/CD pipeline.
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+---
 
-## Running the application in dev mode
+## About the Project
 
-You can run your application in dev mode that enables live coding using:
+This project provides a lightweight inventory management API with full CRUD operations for a **Product** entity (`id`, `name`, `price`, `quantity`). It demonstrates how to build, test, and deploy a modern Java microservice using Quarkus — from local development all the way to a production-ready Kubernetes environment.
 
-```shell script
+---
+
+## Tech Stack
+
+| Layer         | Technology                        |
+|---------------|-----------------------------------|
+| Language      | Java 21                           |
+| Framework     | Quarkus (REST Reactive)           |
+| ORM           | Hibernate ORM with Panache        |
+| Database      | PostgreSQL                        |
+| Serialization | Jackson (JSON)                    |
+| Build Tool    | Maven (via `./mvnw` wrapper)      |
+| Container     | Docker                            |
+| Orchestration | K3s (lightweight Kubernetes)      |
+| CI/CD         | Harness                           |
+
+---
+
+## How to Run
+
+### Prerequisites
+
+- Java 21+
+- Maven 3.9+ (or use the included `./mvnw` wrapper)
+- A running PostgreSQL instance (or use Quarkus Dev Services to auto-start one)
+
+### Start in Dev Mode
+
+Quarkus Dev Mode enables **live coding** — code changes are automatically reloaded without restarting the server.
+
+```bash
 ./mvnw quarkus:dev
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+The API will be available at **http://localhost:8080**.
 
-## Packaging and running the application
+> **Note:** Quarkus ships with a Dev UI, available in dev mode at <http://localhost:8080/q/dev/>.
 
-The application can be packaged using:
+### API Endpoints
 
-```shell script
-./mvnw package
+| Method | Endpoint     | Description             |
+|--------|--------------|-------------------------|
+| GET    | `/products`  | List all products       |
+| POST   | `/products`  | Create a new product    |
+
+### Example Requests
+
+```bash
+# Create a product
+curl -X POST http://localhost:8080/products \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Keyboard", "price": 49.99, "quantity": 100}'
+
+# List all products
+curl http://localhost:8080/products
 ```
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+---
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+## Roadmap
 
-If you want to build an _über-jar_, execute the following command:
+- [x] Project scaffolding with Quarkus
+- [x] Product entity with Hibernate Panache
+- [x] REST endpoints (GET, POST)
+- [ ] Add PUT and DELETE endpoints for full CRUD
+- [ ] Dockerize the application (`Dockerfile.jvm`)
+- [ ] Deploy to Ubuntu Server VM with Docker
+- [ ] Set up K3s cluster for container orchestration
+- [ ] Configure Harness CI/CD pipeline for automated build & deployment
+- [ ] Add integration tests with `@QuarkusTest`
+- [ ] Production-ready PostgreSQL configuration
 
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
+---
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+## License
 
-## Creating a native executable
-
-You can create a native executable using:
-
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/config-quickstart-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Related Guides
-
-- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
->>>>>>> 6088e26 (Project Started)
->>>>>>> 6fe48b5 (first commit)
-# quarkus-harness-k3s-lab
+This project is for learning and demonstration purposes.
