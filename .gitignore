@@ -44,3 +44,4 @@ k8s/secret.yaml
 /.quarkus/cli/plugins/
 # TLS Certificates
 .certs/
+k8s/secret.yaml
