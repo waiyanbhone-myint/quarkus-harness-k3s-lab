@@ -25,5 +25,5 @@ Service Delivery: A Kubernetes Service exposes the application, allowing traffic
 
 <img width="593" height="197" alt="Screenshot 2026-02-22 at 3 00 16 PM" src="https://github.com/user-attachments/assets/0df31084-9eab-4146-96a3-858b79bfecaf" />
 <img width="10<img width="828" height="376" alt="Screenshot 2026-02-22 at 2 59 02 PM" src="https://github.com/user-attachments/assets/49ab5503-7f29-43af-bae5-d9c003f69795" />
-04" height="320" alt="Screenshot 2026-02-22 at 2 59 19 PM" src="https://github.com/user-attachments/assets/9ea05eb1-c12f-4126-9fc0-f4809e0393d9" />
 <img width="755" height="594" alt="Screenshot 2026-02-22 at 2 58 39 PM" src="https://github.com/user-attachments/assets/cbcb46b6-d0c4-4512-815b-4760d52f3e1c" />
+<img width="823" height="381" alt="Screenshot 2026-02-22 at 2 58 55 PM" src="https://github.com/user-attachments/assets/f8ae7dde-151b-4b87-ab55-d77caf21addb" />
