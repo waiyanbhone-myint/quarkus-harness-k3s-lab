@@ -23,7 +23,7 @@ This project follows a modern DevOps lifecycle, divided into three distinct phas
 - **Data Connectivity:** The Quarkus application establishes a secure JDBC connection to the PostgreSQL database using the internal network routing provided by the Ubuntu VM host.
 - **Service Delivery:** A Kubernetes Service exposes the application, allowing traffic to reach the functional API.
 
----
+-----
 
 ## Screenshots
 
